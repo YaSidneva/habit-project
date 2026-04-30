@@ -6,7 +6,7 @@ export default function Header() {
         <header>
             <div className="logo">
                 <img className="logoImg" src="../assets/logo.png" alt="logo"></img>
-                Mindful</div>
+                <div>Mindful</div></div>
 
             <nav>
                 <Link to="/">Home</Link>
