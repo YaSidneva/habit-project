@@ -42,15 +42,15 @@ a {
 }
 
 .footerLinkWeb {
-    background-image: url("public/img/eath-icon.svg");
+    background-image: url("../assets/eath-icon.svg");
     margin-left:0px;
 }
 
 .footerLinkCom {
-    background-image: url("public/img/people-icon.svg");
+    background-image: url("../assets/people-icon.svg");
     margin-top: 6px;
 }
 
 .footerLinkMail {
-    background-image: url("public/img/letter-icon.svg");
+    background-image: url("../assets/letter-icon.svg");
 }

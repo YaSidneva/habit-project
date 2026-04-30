@@ -14,7 +14,7 @@
             to right,
             rgba(255, 255, 255, 0.9),
             rgba(255, 255, 255, 0)
-    ), url("/public/img/back-hero.png");
+    ), url("../assets/back-hero.png");
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -103,12 +103,12 @@ h1 {
 
 .heroCard1 {
     height: 138px;
-    background-image: url("/public/img/heroCard1.png");
+    background-image: url("../assets/heroCard1.png");
 }
 
 .heroCard2 {
     height: 186px;
-    background-image: url("/public/img/heroCard2.png");
+    background-image: url("../assets/heroCard2.png");
 }
 
 .authSection {

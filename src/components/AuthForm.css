@@ -141,13 +141,13 @@ button {padding: 0;
 .formButtonGoogleIcon {
     width: 25px;
     height: 25px;
-    background-image: url("public/img/Google-icon.svg");
+    background-image: url("../assets/Google-icon.svg");
 }
 
 .formButtonTelegramIcon {
     width: 25px;
     height: 25px;
-    background-image: url("public/img/Telegram-icon.svg");
+    background-image: url("../assets/Telegram-icon.svg");
 }
 
 .authFormTerms {

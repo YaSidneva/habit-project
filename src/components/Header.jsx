@@ -5,7 +5,7 @@ export default function Header() {
     return (
         <header>
             <div className="logo">
-                <img className="logoImg" src="/public/img/logo.png" alt="logo"></img>
+                <img className="logoImg" src="../assets/logo.png" alt="logo"></img>
                 Mindful</div>
 
             <nav>

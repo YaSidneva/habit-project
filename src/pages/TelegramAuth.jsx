@@ -5,32 +5,47 @@ export default function TelegramAuth() {
 
     const navigate = useNavigate()
 
-    useEffect(() => {
 
+    useEffect(() => {
         const params = new URLSearchParams(window.location.search)
 
         const user = {
-            id: params.get('id'),
-            first_name: params.get('first_name'),
-            username: params.get('username'),
-            auth_date: params.get('auth_date')
+            id: params.get('id')
         }
 
-        console.log('Telegram user:', user)
-
-        // ❗ ПРОВЕРКА ДАННЫХ
         if (user.id) {
-
-            localStorage.setItem('telegram_user', JSON.stringify(user))
-
+            localStorage.setItem('user', JSON.stringify(user))
             navigate('/dashboard')
-
         } else {
-            console.log('No Telegram user data received')
             navigate('/login')
         }
-
     }, [])
+    // useEffect(() => {
+    //
+    //     const params = new URLSearchParams(window.location.search)
+    //
+    //     const user = {
+    //         id: params.get('id'),
+    //         first_name: params.get('first_name'),
+    //         username: params.get('username'),
+    //         auth_date: params.get('auth_date')
+    //     }
+    //
+    //     console.log('Telegram user:', user)
+    //
+    //     // ❗ ПРОВЕРКА ДАННЫХ
+    //     if (user.id) {
+    //
+    //         localStorage.setItem('telegram_user', JSON.stringify(user))
+    //
+    //         navigate('/dashboard')
+    //
+    //     } else {
+    //         console.log('No Telegram user data received')
+    //         navigate('/login')
+    //     }
+    //
+    // }, [])
 
     return <div>Logging in via Telegram...</div>
 }
