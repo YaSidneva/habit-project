@@ -2,11 +2,11 @@ import { useState, useEffect, useRef } from "react"
 import "./AuthForm.css"
 
 export default function TelegramLogin() {
-    const [showWidget, setShowWidget] = useState(false)
+    const [open, setOpen] = useState(false)
     const containerRef = useRef(null)
 
     useEffect(() => {
-        if (!showWidget) return
+        if (!open) return
 
         const script = document.createElement("script")
         script.src = "https://telegram.org/js/telegram-widget.js?22"
@@ -22,15 +22,15 @@ export default function TelegramLogin() {
 
         containerRef.current.innerHTML = ""
         containerRef.current.appendChild(script)
-    }, [showWidget])
+    }, [open])
 
     return (
-        <div className="telegramLoginWrapper">
-
+        <>
+            {/* ТВОЯ КНОПКА */}
             <button
                 type="button"
                 className="formButtonAccount formButtonTelegram"
-                onClick={() => setShowWidget(true)}
+                onClick={() => setOpen(true)}
             >
                 <div className="formButtonAccountIcon formButtonTelegramIcon"></div>
                 <div className="formButtonAccountName formButtonTelegramName">
@@ -38,12 +38,24 @@ export default function TelegramLogin() {
                 </div>
             </button>
 
-            {showWidget && (
-                <div
-                    ref={containerRef}
-                    className="telegramWidgetPopup"
-                />
+            {/* OVERLAY */}
+            {open && (
+                <div className="modalOverlay" onClick={() => setOpen(false)}>
+                    <div
+                        className="modalCard"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <button
+                            className="modalClose"
+                            onClick={() => setOpen(false)}
+                        >
+                            ✕
+                        </button>
+
+                        <div ref={containerRef} />
+                    </div>
+                </div>
             )}
-        </div>
+        </>
     )
 }
