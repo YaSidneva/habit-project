@@ -19,5 +19,10 @@ header {
 }
 
 .logoImg {
+    background-image: url(/src/assets/logo.png);
     height: 64px;
+    width: 64px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
