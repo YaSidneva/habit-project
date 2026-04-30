@@ -1,0 +1,164 @@
+form {
+    height: 643px;
+    width: 552px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.authLogSign {
+    height: 43px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #566067;
+}
+
+
+
+.authLogSignBtn {
+    padding: 0;
+    border: none;
+    font: inherit;
+    background-color: transparent;
+    color: #566067;
+}
+
+.authLogSignBtn:hover {
+    color: #3C5F7D;
+    border-bottom: 1px solid #3C5F7D;
+    padding-top: 1px;
+}
+
+.logBtn {
+    margin-right: 24px;
+}
+
+.formContainer {
+    height: 446px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #566067;
+}
+
+.inputWrap {
+    background-color: #F7F9FB;
+    border-radius: 8px;
+    height: 50px;
+    border: 1px solid #6B7280;
+    margin-top: 8px;
+    padding-left: 16px;
+}
+
+.formInput {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+input::placeholder {
+    font-family: Manrope;
+}
+
+.formStay:hover {
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    background-color: #F7F9FB;
+    margin-right: 8px;
+
+}
+
+button {padding: 0;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.formEnter {
+    height: 56px;
+    background-color: #6B8EAE;
+    border-color: #6B8EAE;
+    color: #FFFFFF;
+    border-radius: 8px;
+}
+
+.formEnter:hover {
+    border-color: #5A7C9B;
+    background-color: #5A7C9B;
+}
+
+.formOr {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.formOr::before,
+.formOr::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+.formOr::before {
+    margin-right: 10px;
+}
+
+.formOr::after {
+    margin-left: 10px;
+}
+
+.formButtonAccountBlock {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formButtonAccount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 227px;
+    border-radius: 8px;
+    color: #6B7280;
+    background-color: #F7F9FB;
+    height: 100%;
+    border: 1px solid #6B7280;
+}
+
+.formButtonAccount:hover {
+    background-color: #F1F5F9;
+}
+
+.formButtonGoogleIcon {
+    width: 25px;
+    height: 25px;
+    background-image: url("public/img/Google-icon.svg");
+}
+
+.formButtonTelegramIcon {
+    width: 25px;
+    height: 25px;
+    background-image: url("public/img/Telegram-icon.svg");
+}
+
+.authFormTerms {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #72777E;
+    font-size: 15px;
+}
+
+a {
+    margin-left: 3px;
+    color: #72777E;
+}

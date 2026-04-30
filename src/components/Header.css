@@ -1,0 +1,23 @@
+header {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1E293B;
+}
+
+.logoImg {
+    height: 64px;
+}

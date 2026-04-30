@@ -1,0 +1,56 @@
+footer {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+a {
+    text-decoration:none;
+}
+
+.footerHeading {
+    color: #6B8EAE;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.footerText {
+    color: #566067;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.footerLinksBlock {
+    height: 36px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerLink {
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 20px;
+    width: 25px;
+    margin-left: 15px;
+}
+
+.footerLinkWeb {
+    background-image: url("public/img/eath-icon.svg");
+    margin-left:0px;
+}
+
+.footerLinkCom {
+    background-image: url("public/img/people-icon.svg");
+    margin-top: 6px;
+}
+
+.footerLinkMail {
+    background-image: url("public/img/letter-icon.svg");
+}

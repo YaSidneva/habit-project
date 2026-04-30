@@ -1,0 +1,184 @@
+.mainSection {
+    background-color: #F7F9FB;
+    font-family: "Manrope", sans-serif;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.heroSection {
+    height: 870px;
+    background-image:linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0)
+    ), url("/public/img/back-hero.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+}
+
+.heroSectionContainer {
+    max-width: 1280px;
+    margin-left: 80px;
+    margin-right: 80px;
+    height: 380px;
+    display: flex;
+}
+
+.heroSectionContainerInfo {
+    max-width: 576px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+h1 {
+    font-size: 56px;
+    color: #1E293B;
+    margin: 0;
+}
+
+.heroSectionContainerInfoBlue {
+    color: #3C5F7D;
+    font-style:italic ;
+}
+
+.heroSectionContainerInfoText {
+    font-size: 16px;
+    color: #566067;
+}
+
+.heroSectionContainerExample {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.heroButton {
+    width: 170px;
+    height: 58px;
+    border-radius: 8px;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.startButton {
+    background-color: #6B8EAE;
+    border: 1px solid #6B8EAE;
+    color: #FFFFFF;
+    margin-right: 16px;
+}
+
+.startButton:hover {
+    border-color: #5A7C9B;
+    background-color: #5A7C9B;
+}
+
+.viewButton {
+    background: none;
+    border: 1px solid #6B8EAE;
+    color: #6B8EAE;
+}
+
+.viewButton:hover {
+    background-color: rgba(241, 245, 249, 0.1);
+}
+
+.heroCard {
+    width: 300px;
+    background-size: cover;
+
+}
+
+.heroCard1 {
+    height: 138px;
+    background-image: url("/public/img/heroCard1.png");
+}
+
+.heroCard2 {
+    height: 186px;
+    background-image: url("/public/img/heroCard2.png");
+}
+
+.authSection {
+    height: 723px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #F2F4F6;
+    padding-top: 40px;
+}
+
+.authSectionContainer {
+    max-width: 1152px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.authSectionContainerInfo {
+    height: 316px;
+    max-width: 552px;
+    margin-right: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.authSectionContainerInfoBlock {
+    height: 172px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.authSectionContainerInfoHeader {
+    color: #191C1E;
+}
+
+.authSectionContainerInfoText {
+    color: #566067;
+}
+
+.authSectionCard {
+    height: 78px;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+}
+
+.authSectionCardIcon {
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #F2F4F6;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.authSectionCardHeader {
+    color: #191C1E;
+}
+
+.authSectionCardText {
+    color: #566067;
+    font-size: 14px;
+    line-height: 20px;
+}
