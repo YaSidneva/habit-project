@@ -162,3 +162,22 @@ a {
     margin-left: 3px;
     color: #72777E;
 }
+
+
+
+.telegramLoginWrapper {
+    height: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+.telegramWidgetPopup {
+    position: absolute;
+    top: 60px; /* ниже кнопки */
+    left: 0;
+    z-index: 1000;
+
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+}
