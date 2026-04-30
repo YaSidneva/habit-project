@@ -10,8 +10,21 @@ export default function Header() {
             </div>
 
             <nav>
-                <Link to="/">Home</Link>
+                <Link to="/dashboard">Dashboard</Link>
+                <Link to="/">Leaderboard</Link>
+                <Link to="/">Statistics</Link>
+                <Link to="/">Settings</Link>
             </nav>
+            <div className="headerSettingsBlock">
+                <div className="headerSettings">
+                    <div className="headerSettingsNotification"></div>
+                    <div className="headerSettingsOptions"></div></div>
+                <div className="headerProfile">
+                    <div className="headerProfileName">User</div>
+                    <div className="headerProfileAvatar"></div>
+                </div>
+            </div>
+
         </header>
     )
 }

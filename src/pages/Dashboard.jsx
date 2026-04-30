@@ -1,17 +1,17 @@
+import './Dachboard.css'
+
+import Header from '../components/Header.jsx'
+import Sidebar from '../components/Sidebar.jsx'
+
 export default function Dashboard() {
 
     const user = JSON.parse(localStorage.getItem('telegram_user'))
 
     return (
-        <div>
-            <h1>Dashboard</h1>
-            <h2>ghbdtn</h2>
-            {user ? (
-                <p>Welcome {user.first_name}</p>
-            ) : (
-                <p>No user</p>
-
-            )}
+        <div className="mainSection">
+            <Header />
+            <main>
+                <Sidebar /> </main>
         </div>
     )
 }

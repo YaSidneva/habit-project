@@ -1,0 +1,38 @@
+.sidebar {
+    width: 256px;
+    border-right: 1px solid #E2E8F0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarNav {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarNavItem {
+    display: flex;
+}
+
+.sidebarNavIcon {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sidebarIconDashboard {
+    background-image: url("../assets/icon-dashboard.svg");
+}
+
+.sidebarIconLeaderboard {
+    background-image: url("../assets/icon-leaderboard.svg");
+}
+
+.sidebarIconStatistics{
+    background-image: url("../assets/icon-statistics.svg");
+}
+
+.sidebarIconSettings {
+    background-image: url("../assets/icon-gear.svg");
+}

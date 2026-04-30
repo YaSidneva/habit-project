@@ -6,8 +6,9 @@ header {
     font-family: "Manrope", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 11px 32px;
+    background-color: white;
+    color: #64748B;
 }
 
 .logo {
@@ -25,4 +26,70 @@ header {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 467px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.headerSettingsBlock {
+    height: 100%;
+    width: 194px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerSettings {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.headerSettingsNotification {
+    background-image: url("../assets/icon-bell.svg");
+    height: 22px;
+    width: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+}
+
+.headerSettingsOptions {
+    background-image: url("../assets/icon-gear.svg");
+    height: 22px;
+    width: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.headerProfile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 98px;
+    height: 100%;
+    border-left: 1px solid #E2E8F0;
+    font-size: 14px;
+    color: #334155;
+}
+
+.headerProfileName{
+    padding-left: 8px;
+}
+
+.headerProfileAvatar {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background-image: url("../assets/avatar.svg");
+    background-position: center;
+    background-repeat: no-repeat;
 }
