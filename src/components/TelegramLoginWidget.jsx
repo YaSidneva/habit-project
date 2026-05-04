@@ -4,21 +4,27 @@ export default function TelegramLoginWidget() {
     const containerRef = useRef(null)
 
     useEffect(() => {
-        const script = document.createElement("script")
+        if (step !== 2) return
 
-        script.src = "https://telegram.org/js/telegram-widget.js?22"
-        script.async = true
+        const div = document.createElement("div")
+        div.className = "telegram-login-button"
 
-        script.setAttribute("data-telegram-login", "YOUR_BOT_NAME")
-        script.setAttribute("data-size", "large")
-        script.setAttribute("data-userpic", "false")
-        script.setAttribute(
+        div.setAttribute("data-telegram-login", "Mindful_auth_bot")
+        div.setAttribute("data-size", "large")
+        div.setAttribute("data-userpic", "false")
+        div.setAttribute(
             "data-auth-url",
             "https://habit-project-nine.vercel.app/auth/telegram"
         )
 
-        containerRef.current.appendChild(script)
-    }, [])
+        containerRef.current.innerHTML = ""
+        containerRef.current.appendChild(div)
 
-    return <div ref={containerRef}></div>
+        const script = document.createElement("script")
+        script.src = "https://telegram.org/js/telegram-widget.js?22"
+        script.async = true
+        document.body.appendChild(script)
+
+    }, [step])
 }
+
