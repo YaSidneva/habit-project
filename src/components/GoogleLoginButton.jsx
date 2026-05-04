@@ -7,13 +7,10 @@ export default function GoogleLoginButton() {
     const navigate = useNavigate()
 
     const login = useGoogleLogin({
-        ux_mode: 'redirect',
-
         onSuccess: (res) => {
             localStorage.setItem('google_user', JSON.stringify(res))
             navigate('/dashboard')
         },
-
         onError: () => console.log('Login Failed')
     })
 
