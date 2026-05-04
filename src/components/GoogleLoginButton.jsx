@@ -1,6 +1,6 @@
 import { useGoogleLogin } from '@react-oauth/google'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios' // установи через npm install axios
+import axios from 'axios'
 import './AuthForm.css'
 
 export default function GoogleLoginButton() {
@@ -9,21 +9,35 @@ export default function GoogleLoginButton() {
     const login = useGoogleLogin({
         onSuccess: async (tokenResponse) => {
             try {
-                // Получаем реальные данные пользователя, используя access_token
-                const res = await axios.get('https://www.googleapis.com/oauth2/v3/userinfo', {
-                    headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
-                })
+                // 1. tokenResponse содержит только access_token.
+                // Нам нужно сходить к Google и спросить: "Кто это такой?"
+                const userInfo = await axios.get(
+                    'https://www.googleapis.com/oauth2/v3/userinfo',
+                    {
+                        headers: {
+                            Authorization: `Bearer ${tokenResponse.access_token}`
+                        },
+                    }
+                )
 
-                // Теперь в res.data лежат: email, name, picture
-                localStorage.setItem('google_user', JSON.stringify(res.data))
+                // 2. Теперь у нас есть объект с данными: email, name, picture
+                console.log('Данные из Google:', userInfo.data)
 
-                console.log('Данные пользователя:', res.data)
+                // 3. Сохраняем в localStorage, чтобы Dashboard видел, что мы вошли
+                localStorage.setItem('user', JSON.stringify({
+                    type: 'google',
+                    ...userInfo.data
+                }))
+
+                // 4. Улетаем на Dashboard
                 navigate('/dashboard')
-            } catch (err) {
-                console.error('Ошибка получения данных профиля:', err)
+            } catch (error) {
+                console.error('Ошибка при получении данных профиля:', error)
             }
         },
-        onError: (error) => console.log('Login Failed:', error),
+        onError: (error) => console.log('Ошибка авторизации:', error),
+        // Это помогает избежать некоторых проблем с блокировкой окон в Chrome
+        flow: 'implicit',
     })
 
     return (
@@ -33,9 +47,9 @@ export default function GoogleLoginButton() {
             onClick={() => login()}
         >
             <div className="formButtonAccountIcon formButtonGoogleIcon"></div>
-            <div className="formButtonAccountName formButtonGoogleName">
+            <span className="formButtonAccountName formButtonGoogleName">
                 Google
-            </div>
+            </span>
         </button>
     )
 }
