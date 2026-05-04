@@ -1,0 +1,95 @@
+.dashboardMainContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dashboardMain {
+    height: 720px;
+    max-width: 672px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 160px;
+}
+
+.dashboardImg {
+    background-image: url("../assets/mountain.png");
+    width: 320px;
+    height: 320px;
+}
+
+.dashboardDesc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 442px;
+    text-align: center;
+}
+
+.dashboardDescHeader {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.dashboardDescText {
+    font-size: 18px;
+    line-height: 29px;
+    color: #566067;
+}
+
+.dashboardNewHabit {
+    width: 250px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background-color: #6B8EAE;
+    border-color: #6B8EAE;
+    color: #FFFFFF;
+}
+
+.dashboardNewHabit:hover {
+    border-color: #5A7C9B;
+    background-color: #5A7C9B;
+}
+.addHabitIcon {
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    margin-right: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.dashboardSuggestedHabits {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.dashboardSuggestedHabitsItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    height: 42px;
+    background-color: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    color: #64748B;
+    border-radius: 40px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.dashboardSuggestedHabitsItem:hover {
+    background-color: rgba(241, 245, 249, 0.1);
+}

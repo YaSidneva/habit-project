@@ -8,10 +8,18 @@
 .sidebarNav {
     display: flex;
     flex-direction: column;
+    margin-top: 32px;
 }
 
 .sidebarNavItem {
     display: flex;
+    height: 44px;
+    max-width: 223px;
+    align-items: center;
+    width: inherit;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 4px;
 }
 
 .sidebarNavIcon {
@@ -19,10 +27,18 @@
     height: 20px;
     background-repeat: no-repeat;
     background-position: center;
+    margin-left: 16px;
+    margin-right: 12px;
 }
 
-.sidebarIconDashboard {
-    background-image: url("../assets/icon-dashboard.svg");
+.sidebarNavDashboard {
+    background-color: #EFF6FF;
+    color: #3B82F6;
+    border-right: 1px solid #3B82F6;
+}
+
+.sidebarIconDashboard path {
+   fill: #3B82F6;
 }
 
 .sidebarIconLeaderboard {
@@ -35,4 +51,37 @@
 
 .sidebarIconSettings {
     background-image: url("../assets/icon-gear.svg");
+}
+
+.sidebarProfile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 17px;
+    margin-bottom: 34px;
+}
+
+.sidebarProfileAvatar {
+    height: 32px;
+    width: 32px;
+    margin-right: 12px;
+    border-radius: 50%;
+    background-image: url("../assets/avatar.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.addNewHabit {
+    width: 185px;
+    height: 40px;
+    border-radius: 8px;
+    align-self: center;
+    background-color: #6B8EAE;
+    border-color: #6B8EAE;
+    color: #FFFFFF;
+}
+
+.addNewHabit:hover {
+    border-color: #5A7C9B;
+    background-color: #5A7C9B;
 }
