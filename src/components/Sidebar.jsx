@@ -2,11 +2,17 @@ import { Link } from 'react-router-dom'
 import './Sidebar.css'
 
 export default function Sidebar() {
+    const userData = localStorage.getItem('user')
+    const user = userData ? JSON.parse(userData) : null
+
+    const userName = user?.name || user?.first_name || 'Climber'
+    const userPhoto = user?.picture || user?.photo_url || null
+
     return (
         <div className="sidebar">
         <div className="sidebarProfile">
-            <div className="sidebarProfileAvatar"></div>
-            <div className="sidebarProfileName">User</div>
+            <div className="sidebarProfileAvatar" style={userPhoto ? { backgroundImage: `url(${userPhoto})`, backgroundSize: 'cover' } : {}}></div>
+            <div className="sidebarProfileName">{userName}</div>
         </div>
             <button className="addNewHabit">+ New Habit</button>
             <nav className="sidebarNav">
