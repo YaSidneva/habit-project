@@ -27,9 +27,7 @@ export default function AuthForm() {
                 <div className="formOr">OR CONTINUE WITH</div>
                 <div className="formButtonAccountBlock">
                     <GoogleLoginButton />
-                    <TelegramLogin />
-
-
+                    <TelegramLoginWidget />
                 </div>
 
             </div>
@@ -40,5 +38,4 @@ export default function AuthForm() {
         </form>
 
     )
-}
 }
