@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import GoogleLoginButton from './GoogleLoginButton'
-import TelegramLogin from '../components/TelegramLogin'
+import TelegramLoginWidget from './TelegramLoginWidget'
 import './AuthForm.css'
 
 export default function AuthForm() {
@@ -40,4 +40,5 @@ export default function AuthForm() {
         </form>
 
     )
+}
 }
