@@ -6,7 +6,7 @@ export default function TelegramLogin() {
     const [isLoading, setIsLoading] = useState(false)
 
     const handleLogin = () => {
-        const botId = '8623908798'; 
+        const botId = '8650457875'; 
         const origin = window.location.origin;
         const authUrl = `https://oauth.telegram.org/auth?bot_id=${botId}&origin=${encodeURIComponent(origin)}`;
 
