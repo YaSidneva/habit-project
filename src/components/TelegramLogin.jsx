@@ -10,6 +10,12 @@ export default function TelegramLogin() {
         const origin = window.location.origin;
         const authUrl = `https://oauth.telegram.org/auth?bot_id=${botId}&origin=${encodeURIComponent(origin)}`;
 
+        console.log('--- Telegram Auth Debug ---');
+        console.log('Bot ID:', botId);
+        console.log('Current Origin:', origin);
+        console.log('Full Auth URL:', authUrl);
+        console.log('---------------------------');
+
         // Открываем в маленьком всплывающем окне
         window.open(authUrl, 'tgAuth', 'width=550,height=600,left=300,top=100');
     };
