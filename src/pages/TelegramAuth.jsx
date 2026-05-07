@@ -2,6 +2,8 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function TelegramAuth() {
+    const navigate = useNavigate()
+
     useEffect(() => {
         const hashParams = new URLSearchParams(window.location.hash.replace('#', ''))
         const tgData = hashParams.get('tgAuthResult')
@@ -25,22 +27,34 @@ export default function TelegramAuth() {
         if (userData) {
             localStorage.setItem('user', JSON.stringify({ ...userData, type: 'telegram' }))
             
-            // 1. Уведомляем основное окно через postMessage (самый надежный способ)
+            // Если это было окно-попап (есть родитель), уведомляем его
             if (window.opener) {
-                window.opener.postMessage({ type: 'TG_AUTH_SUCCESS' }, window.location.origin);
+                try {
+                    window.opener.postMessage({ type: 'TG_AUTH_SUCCESS' }, window.location.origin);
+                    setTimeout(() => window.close(), 500);
+                } catch (e) {
+                    navigate('/dashboard');
+                }
+            } else {
+                // Если это основное окно — просто переходим
+                navigate('/dashboard');
             }
-            
-            // 2. Закрываем попап через небольшую паузу
-            setTimeout(() => {
-                window.close();
-            }, 500);
+        } else {
+            // Если зашли просто так — на главную
+            const timer = setTimeout(() => navigate('/'), 3000);
+            return () => clearTimeout(timer);
         }
-    }, [])
+    }, [navigate])
 
     return (
-        <div style={{ padding: '20px', textAlign: 'center' }}>
-            <h2>Авторизация...</h2>
-            <p>Это окно закроется автоматически.</p>
+        <div style={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            height: '100vh',
+            fontFamily: 'Inter, sans-serif' 
+        }}>
+            <h2>Авторизация завершена. Переходим в Dashboard...</h2>
         </div>
     )
 }
