@@ -9,7 +9,7 @@ function App() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        // 1. Слушаем явное сообщение от попапа (самый надежный способ)
+        // 1. Слушаем явное сообщение от попапа
         const handleMessage = (event) => {
             if (event.origin !== window.location.origin) return;
             if (event.data?.type === 'TG_AUTH_SUCCESS') {
@@ -17,17 +17,25 @@ function App() {
             }
         };
 
-        // 2. Слушаем изменения в localStorage (запасной вариант)
+        // 2. Слушаем изменения в localStorage
         const handleStorageChange = (e) => {
             if (e.key === 'user' && e.newValue) {
                 navigate('/dashboard')
             }
         }
 
+        // 3. Проверяем при фокусе (если попап закрылся, а события выше не сработали)
+        const handleFocus = () => {
+            if (localStorage.getItem('user')) {
+                navigate('/dashboard');
+            }
+        };
+
         window.addEventListener('message', handleMessage);
         window.addEventListener('storage', handleStorageChange);
+        window.addEventListener('focus', handleFocus);
 
-        // 3. Проверяем хэш (на случай если открыли в этой же вкладке)
+        // 4. Проверяем хэш
         const hashParams = new URLSearchParams(window.location.hash.replace('#', ''))
         const tgData = hashParams.get('tgAuthResult')
 
@@ -49,6 +57,7 @@ function App() {
         return () => {
             window.removeEventListener('message', handleMessage);
             window.removeEventListener('storage', handleStorageChange);
+            window.removeEventListener('focus', handleFocus);
         }
     }, [navigate])
 
