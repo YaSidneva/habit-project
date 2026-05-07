@@ -25,8 +25,12 @@ export default function TelegramAuth() {
         if (userData) {
             localStorage.setItem('user', JSON.stringify({ ...userData, type: 'telegram' }))
             
-            // Если это было окно-попап, закрываем его
-            // Основная страница в App.jsx поймает событие 'storage' и перейдет в Dashboard
+            // 1. Уведомляем основное окно через postMessage (самый надежный способ)
+            if (window.opener) {
+                window.opener.postMessage({ type: 'TG_AUTH_SUCCESS' }, window.location.origin);
+            }
+            
+            // 2. Закрываем попап через небольшую паузу
             setTimeout(() => {
                 window.close();
             }, 500);

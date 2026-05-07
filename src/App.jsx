@@ -9,15 +9,25 @@ function App() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        // Слушаем изменения в localStorage (для входа через popup)
+        // 1. Слушаем явное сообщение от попапа (самый надежный способ)
+        const handleMessage = (event) => {
+            if (event.origin !== window.location.origin) return;
+            if (event.data?.type === 'TG_AUTH_SUCCESS') {
+                navigate('/dashboard');
+            }
+        };
+
+        // 2. Слушаем изменения в localStorage (запасной вариант)
         const handleStorageChange = (e) => {
             if (e.key === 'user' && e.newValue) {
                 navigate('/dashboard')
             }
         }
-        window.addEventListener('storage', handleStorageChange)
 
-        // Проверяем наличие данных Telegram в хэше (для обычного редиректа)
+        window.addEventListener('message', handleMessage);
+        window.addEventListener('storage', handleStorageChange);
+
+        // 3. Проверяем хэш (на случай если открыли в этой же вкладке)
         const hashParams = new URLSearchParams(window.location.hash.replace('#', ''))
         const tgData = hashParams.get('tgAuthResult')
 
@@ -36,7 +46,10 @@ function App() {
             }
         }
 
-        return () => window.removeEventListener('storage', handleStorageChange)
+        return () => {
+            window.removeEventListener('message', handleMessage);
+            window.removeEventListener('storage', handleStorageChange);
+        }
     }, [navigate])
 
     return (
