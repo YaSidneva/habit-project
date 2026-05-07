@@ -9,7 +9,15 @@ function App() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        // Проверяем наличие данных Telegram в хэше на любой странице
+        // Слушаем изменения в localStorage (для входа через popup)
+        const handleStorageChange = (e) => {
+            if (e.key === 'user' && e.newValue) {
+                navigate('/dashboard')
+            }
+        }
+        window.addEventListener('storage', handleStorageChange)
+
+        // Проверяем наличие данных Telegram в хэше (для обычного редиректа)
         const hashParams = new URLSearchParams(window.location.hash.replace('#', ''))
         const tgData = hashParams.get('tgAuthResult')
 
@@ -20,7 +28,6 @@ function App() {
                 
                 if (userData && (userData.id || userData.hash)) {
                     localStorage.setItem('user', JSON.stringify({ ...userData, type: 'telegram' }))
-                    // Очищаем хэш и переходим в Dashboard
                     window.history.replaceState({}, document.title, window.location.pathname)
                     navigate('/dashboard')
                 }
@@ -28,6 +35,8 @@ function App() {
                 console.error("Ошибка при обработке данных Telegram:", e)
             }
         }
+
+        return () => window.removeEventListener('storage', handleStorageChange)
     }, [navigate])
 
     return (

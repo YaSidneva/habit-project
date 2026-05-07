@@ -8,12 +8,10 @@ export default function TelegramLogin() {
     const handleLogin = () => {
         const botId = '8623908798'; 
         const origin = window.location.origin;
-
-        // Убираем embed=1, чтобы Telegram не пытался закрыть окно сам
         const authUrl = `https://oauth.telegram.org/auth?bot_id=${botId}&origin=${encodeURIComponent(origin)}`;
 
-        // Возвращаемся к переходу в той же вкладке, так как App.jsx теперь ловит хэш везде
-        window.location.assign(authUrl);
+        // Открываем в маленьком всплывающем окне
+        window.open(authUrl, 'tgAuth', 'width=550,height=600,left=300,top=100');
     };
 
     return (
