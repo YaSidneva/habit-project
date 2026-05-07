@@ -5,41 +5,21 @@ export default function TelegramAuth() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        // 1. Пытаемся достать данные из Hash (#tgAuthResult=...)
+        // Данные теперь обрабатываются в App.jsx, но на случай, если мы попали сюда напрямую
         const hashParams = new URLSearchParams(window.location.hash.replace('#', ''))
         const tgData = hashParams.get('tgAuthResult')
-
-        let userData = null
 
         if (tgData) {
             try {
                 const decodedData = atob(tgData) 
-                userData = JSON.parse(decodedData)
+                const userData = JSON.parse(decodedData)
+                if (userData && (userData.id || userData.hash)) {
+                    localStorage.setItem('user', JSON.stringify({ ...userData, type: 'telegram' }))
+                    navigate('/dashboard', { replace: true })
+                }
             } catch (e) {
-                console.error("Ошибка декодирования данных Telegram", e)
+                console.error("Ошибка Telegram Auth:", e)
             }
-        } else {
-            const searchParams = new URLSearchParams(window.location.search)
-            if (searchParams.get('hash')) {
-                userData = Object.fromEntries(searchParams.entries())
-            }
-        }
-
-        if (userData && (userData.id || userData.hash)) {
-            const finalUser = { ...userData, type: 'telegram' }
-            localStorage.setItem('user', JSON.stringify(finalUser))
-            
-            // Если это всплывающее окно (открыто через window.open)
-            if (window.opener) {
-                // Сообщаем главному окну, что вход выполнен
-                window.opener.location.href = '/dashboard';
-                window.close();
-            } else {
-                // Если это обычная вкладка
-                navigate('/dashboard', { replace: true })
-            }
-        } else if (!window.location.hash && !window.location.search) {
-             navigate('/login')
         }
     }, [navigate])
 
@@ -51,18 +31,22 @@ export default function TelegramAuth() {
             alignItems: 'center', 
             height: '100vh',
             gap: '20px',
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'Inter, sans-serif',
+            textAlign: 'center',
+            padding: '20px'
         }}>
-            <div style={{ fontSize: '20px' }}>Авторизация прошла успешно!</div>
+            <div style={{ fontSize: '20px' }}>Авторизация завершена</div>
+            <p>Если вы не были перенаправлены автоматически, нажмите кнопку ниже:</p>
             <button 
                 onClick={() => navigate('/dashboard')}
                 style={{
-                    padding: '10px 20px',
+                    padding: '12px 24px',
                     backgroundColor: '#3C5F7D',
                     color: 'white',
                     border: 'none',
                     borderRadius: '8px',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    fontSize: '16px'
                 }}
             >
                 Перейти в Dashboard
