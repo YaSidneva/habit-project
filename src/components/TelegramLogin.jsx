@@ -8,7 +8,8 @@ export default function TelegramLogin() {
     const handleLogin = () => {
         const botId = '8650457875'; 
         const origin = window.location.origin;
-        const authUrl = `https://oauth.telegram.org/auth?bot_id=${botId}&origin=${encodeURIComponent(origin)}`;
+        // force=1 заставляет Telegram перепроверить права доступа
+        const authUrl = `https://oauth.telegram.org/auth?bot_id=${botId}&origin=${encodeURIComponent(origin)}&force=1`;
 
         console.log('--- Telegram Auth Debug ---');
         console.log('Bot ID:', botId);
