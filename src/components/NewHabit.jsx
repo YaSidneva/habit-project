@@ -9,7 +9,7 @@ export default function NewHabit() {
             </div>
             <div className="newHabitContainerMain">
                 <div className="habitInput habitName">
-                    <label htmlFor="name">Habit Name</label>
+                    <label htmlFor="name" className="habitInputName">Habit Name</label>
                     <input
                         className="inputWrap"
                         type="text"
@@ -19,15 +19,32 @@ export default function NewHabit() {
                     />
                 </div>
                 <div className="habitInput habitCategory">
-                    <label htmlFor="category">Select Category</label>
+                    <div className="habitInputName">Select Category</div>
                     <div className="habitCategoryBlock">
-                        <input
-                            className="inputWrap"
-                            type="text"
-                            id="category"
-                            required
-                        />
+                        <div className="habitCategory">
+                            <div className="habitCategoryIcon"></div>
+                            <div className="habitCategoryText">Mind</div>
+                        </div>
+                        <div className="habitCategory">
+                            <div className="habitCategoryIcon"></div>
+                            <div className="habitCategoryText">Health</div>
+                        </div>
+                        <div className="habitCategory">
+                            <div className="habitCategoryIcon"></div>
+                            <div className="habitCategoryText">Work</div>
+                        </div>
+                        <div className="habitCategory">
+                            <div className="habitCategoryIcon"></div>
+                            <div className="habitCategoryText">Spirit</div>
+                        </div>
                     </div>
+                    <div className="addOwnCategory">OR ADD CUSTOM CATEGORY</div>
+                </div>
+                <div className="habitInput habitFrequency">
+                    <div className="habitFrequencyItem">Daily</div>
+                    <div className="habitFrequencyItem">Weekly</div>
+                    <div className="habitFrequencyItem">Monthly</div>
+                    <div className="habitFrequencyItem">Custom</div>
                 </div>
             </div>
 
