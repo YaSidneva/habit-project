@@ -1,0 +1,15 @@
+.newHabitContainer {
+    width: 448px;
+    height: 591px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    border: 1px solid #566067;
+}
+
+.newHabitContainerMain {
+    height: 419px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
