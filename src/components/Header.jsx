@@ -7,7 +7,7 @@ export default function Header() {
     const userData = localStorage.getItem('user')
     const user = userData ? JSON.parse(userData) : null
 
-    const userName = user?.name || user?.first_name || 'Climber'
+    const userName = user?.name || user?.first_name || user?.username || 'User'
     const userPhoto = user?.picture || user?.photo_url || null
 
     const handleProtectedClick = (e, targetId) => {
@@ -45,7 +45,7 @@ export default function Header() {
                     <div className="headerSettingsOptions"></div></div>
                 <div className="headerProfile">
                     <div className="headerProfileName">{userName}</div>
-                    <div className="headerProfileAvatar" style={userPhoto ? { backgroundImage: `url(${userPhoto})`, backgroundSize: 'cover' } : {}}></div>
+                    <div className="headerProfileAvatar" style={userPhoto ? { backgroundImage: `url(${userPhoto})`, backgroundSize: 'cover' } : { backgroundColor: '#E2E8F0' }}></div>
                 </div>
             </div>
 

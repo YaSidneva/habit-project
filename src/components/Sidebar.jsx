@@ -5,13 +5,13 @@ export default function Sidebar() {
     const userData = localStorage.getItem('user')
     const user = userData ? JSON.parse(userData) : null
 
-    const userName = user?.name || user?.first_name || 'Climber'
+    const userName = user?.name || user?.first_name || user?.username || 'User'
     const userPhoto = user?.picture || user?.photo_url || null
 
     return (
         <div className="sidebar">
         <div className="sidebarProfile">
-            <div className="sidebarProfileAvatar" style={userPhoto ? { backgroundImage: `url(${userPhoto})`, backgroundSize: 'cover' } : {}}></div>
+            <div className="sidebarProfileAvatar" style={userPhoto ? { backgroundImage: `url(${userPhoto})`, backgroundSize: 'cover' } : { backgroundColor: '#E2E8F0' }}></div>
             <div className="sidebarProfileName">{userName}</div>
         </div>
             <button className="addNewHabit">+ New Habit</button>
