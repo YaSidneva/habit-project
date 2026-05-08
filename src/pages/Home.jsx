@@ -29,7 +29,12 @@ export default function Home() {
                         <div className="heroSectionContainerInfoText">Mindful is a steady path toward better habits. No racing, just
                             consistent progress across the misty peaks of your daily life.</div>
                         <div className="heroSectionContainerInfoButtons">
-                            <button className="heroButton startButton">Start Climbing</button>
+                            <button 
+                                className="heroButton startButton"
+                                onClick={() => document.getElementById('auth-section')?.scrollIntoView({ behavior: 'smooth' })}
+                            >
+                                Start Climbing
+                            </button>
                             <button className="heroButton viewButton">View The Map</button></div> </div>
 
                     <div className="heroSectionContainerExample">
