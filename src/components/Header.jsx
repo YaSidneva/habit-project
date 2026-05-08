@@ -11,16 +11,22 @@ export default function Header() {
     const userPhoto = user?.picture || user?.photo_url || null
 
     const handleProtectedClick = (e, targetId) => {
-        if (!user && location.pathname === '/') {
-            e.preventDefault()
-            // Если мы на главной и не залогинены, просто скроллим к форме
-            const element = document.getElementById('auth-section')
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' })
+        if (location.pathname === '/') {
+            if (!user) {
+                e.preventDefault()
+                // Скроллим к форме на главной для гостей
+                const element = document.getElementById('auth-section')
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' })
+                }
+            } else {
+                // Если залогинен на главной, пока ничего не делаем (заглушка)
+                e.preventDefault()
             }
+        } else {
+            // В Dashboard и на других страницах просто блокируем клик (заглушка)
+            e.preventDefault()
         }
-        // Если мы на другой странице (например, Dashboard), 
-        // Link сработает стандартно и просто перекинет на "/"
     }
 
     return (
