@@ -39,7 +39,7 @@ export default function Home() {
 
                     </div>
                 </div>
-                <div className="authSection">
+                <div className="authSection" id="auth-section">
                     <div className="authSectionContainer">
                         <div className="authSectionContainerInfo">
                             <div className="authSectionContainerInfoHeader">Join the basecamp.</div>
