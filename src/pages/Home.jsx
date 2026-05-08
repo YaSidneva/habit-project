@@ -1,8 +1,21 @@
+import { useEffect } from 'react'
 import './Home.css'
 import Header from '../components/Header.jsx'
 import AuthForm from '../components/AuthForm.jsx'
 import Footer from '../components/Footer.jsx'
+
 export default function Home() {
+    useEffect(() => {
+        if (window.location.hash === '#auth-section') {
+            const element = document.getElementById('auth-section')
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' })
+                }, 100)
+            }
+        }
+    }, [])
+
     return (
         <div className="mainSection">
             <Header />
