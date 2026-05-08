@@ -11,19 +11,16 @@ export default function Header() {
     const userPhoto = user?.picture || user?.photo_url || null
 
     const handleProtectedClick = (e, targetId) => {
-        if (!user) {
+        if (!user && location.pathname === '/') {
             e.preventDefault()
-            if (location.pathname !== '/') {
-                // Если мы не на главной, сначала переходим туда
-                navigate('/#auth-section')
-            } else {
-                // Если на главной, просто скроллим
-                const element = document.getElementById('auth-section')
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' })
-                }
+            // Если мы на главной и не залогинены, просто скроллим к форме
+            const element = document.getElementById('auth-section')
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' })
             }
         }
+        // Если мы на другой странице (например, Dashboard), 
+        // Link сработает стандартно и просто перекинет на "/"
     }
 
     return (
