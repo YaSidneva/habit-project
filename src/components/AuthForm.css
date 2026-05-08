@@ -26,9 +26,9 @@ form {
     color: #566067;
 }
 
-.authLogSignBtn:hover {
+.authLogSignBtn:hover, .authLogSignBtn.active {
     color: #3C5F7D;
-    border-bottom: 1px solid #3C5F7D;
+    border-bottom: 2px solid #3C5F7D;
     padding-top: 1px;
 }
 

@@ -23,6 +23,21 @@ export default function GoogleLoginButton() {
                 // 2. Теперь у нас есть объект с данными: email, name, picture
                 console.log('Данные из Google:', userInfo.data)
 
+                // СИНХРОНИЗАЦИЯ С "БАЗОЙ ДАННЫХ"
+                const users = JSON.parse(localStorage.getItem('registered_users') || '[]')
+                const existingUser = users.find(u => u.email === userInfo.data.email)
+
+                if (!existingUser) {
+                    users.push({
+                        email: userInfo.data.email,
+                        name: userInfo.data.name,
+                        picture: userInfo.data.picture,
+                        type: 'google',
+                        createdAt: new Date().toISOString()
+                    })
+                    localStorage.setItem('registered_users', JSON.stringify(users))
+                }
+
                 // 3. Сохраняем в localStorage, чтобы Dashboard видел, что мы вошли
                 localStorage.setItem('user', JSON.stringify({
                     type: 'google',

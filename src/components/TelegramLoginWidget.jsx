@@ -12,6 +12,22 @@ export default function TelegramLoginWidget() {
         // Создаем глобальную функцию для обработки входа
         window.onTelegramAuth = (user) => {
             console.log('Telegram Auth Success:', user)
+            
+            // СИНХРОНИЗАЦИЯ С "БАЗОЙ ДАННЫХ" (используем id или username как уникальный ключ для Telegram)
+            const users = JSON.parse(localStorage.getItem('registered_users') || '[]')
+            const existingUser = users.find(u => u.telegramId === user.id)
+
+            if (!existingUser) {
+                users.push({
+                    telegramId: user.id,
+                    username: user.username,
+                    first_name: user.first_name,
+                    type: 'telegram',
+                    createdAt: new Date().toISOString()
+                })
+                localStorage.setItem('registered_users', JSON.stringify(users))
+            }
+
             localStorage.setItem('user', JSON.stringify({ ...user, type: 'telegram' }))
             navigate('/dashboard')
         }
