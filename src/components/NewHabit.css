@@ -1,4 +1,18 @@
+.newHabitOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
 .newHabitContainer {
+    background-color: #FFFFFF;
     width: 448px;
     height: 591px;
     display: flex;
@@ -101,7 +115,10 @@ align-items: center;
 }
 
 .habitFrequencyBlock {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 8px;
+    text-align: center;
 }
 
 .habitFrequencyItem {
