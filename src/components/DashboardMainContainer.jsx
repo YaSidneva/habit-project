@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 import './DashboardMainContainer.css'
 
-export default function DashboardMainContainer() {
+export default function DashboardMainContainer({ onAddNew }) {
     return (
         <div className="dashboardMainContainer">
             <div className="dashboardMain">
@@ -13,7 +13,7 @@ export default function DashboardMainContainer() {
                         first habit to begin your ascent toward a more
                         intentional life.</div>
                 </div>
-                <button className="dashboardNewHabit"><div className="addHabitIcon">+</div> + Add Your First Habit</button>
+                <button className="dashboardNewHabit" onClick={onAddNew}><div className="addHabitIcon">+</div> + Add Your First Habit</button>
                 <div className="dashboardSuggestedHabits">
                     <button className="dashboardSuggestedHabitsItem">Daily Meditation</button>
                     <button className="dashboardSuggestedHabitsItem">Morning Walk</button>
