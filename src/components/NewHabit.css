@@ -3,13 +3,157 @@
     height: 591px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border-radius: 12px;
     border: 1px solid #566067;
+    padding: 27px;
 }
+
+.newHabitContainerHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #E2E8F0;
+    padding-bottom: 21px;
+}
+
+.habitName {
+    display: flex;
+    flex-direction: column;
+}
+
+.newHabitContainerHeaderName {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+    color: #5A7C9B;
+}
+
+.newHabitContainerHeaderClose {
+    width: 14px;
+    height: 14px;
+}
+.newHabitContainerHeaderClose:hover {
+    cursor: pointer;
+}
+
+.newHabitContainerHeaderClose:hover svg path {
+    fill: #566067;
+}
+
 
 .newHabitContainerMain {
     height: 419px;
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    padding-top: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #475569;
+}
+
+.inputWrap {
+    background-color: #F1F5F9;
+    border: 1px solid #E2E8F0;
+}
+
+.habitCategoryBlock {
+    height: 104px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 16px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.habitCategory {
+    border-radius: 8px;
+    background-color: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+}
+
+.habitCategory:hover {
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.habitCategoryText {
+    margin-left: 12px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.habitCategoryIcon {display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.addOwnCategory:hover {
+    cursor: pointer;
+    color: #5A7C9B;
+}
+
+.habitFrequencyBlock {
+    display: flex;
+}
+
+.habitFrequencyItem {
+    font-size: 14px;
+    line-height: 20px;
+    color: #475569;
+    padding: 10px;
+    background-color: #F1F5F9;
+    border-radius: 40px;
+    margin-top: 12px;
+}
+
+.habitFrequencyItem:hover {
+    cursor: pointer;
+    background-color: #5A7C9B;
+    color: #F1F5F9;
+}
+
+.newHabitContainerFooter {
+    height: 54px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid #E2E8F0;
+}
+
+.newHabitContainerButton {
+    height: 100%;
+    border-radius: 8px;
+}
+
+.newHabitContainerButtonCancel {
+    background-color: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    color: #1E293B;
+}
+
+.newHabitContainerButtonCancel:hover {
+    background-color: #FFFFFF;
+}
+
+.newHabitContainerButtonStart {
+    background-color: #6B8EAE;
+    border: 1px solid #6B8EAE;
+    color: #ffffff;
+
+}
+
+.newHabitContainerButtonStart:hover {
+    border-color: #5A7C9B;
+    background-color: #5A7C9B;
 }
