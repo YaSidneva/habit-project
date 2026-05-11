@@ -74,6 +74,12 @@
     border: 1px solid #E2E8F0;
 }
 
+.inputWrap:focus, .inputWrap:active {
+    border: 1px solid #E2E8F0;
+    background-color: #ffffff;
+    outline: 0;
+}
+
 .habitCategoryBlock {
     height: 104px;
     display: grid;
@@ -93,7 +99,7 @@
     padding-left: 12px;
 }
 
-.habitCategory:hover {
+.habitCategory:hover, .habitCategory:focus {
     background-color: #FFFFFF;
     cursor: pointer;
 }
@@ -132,6 +138,12 @@ align-items: center;
 }
 
 .habitFrequencyItem:hover {
+    cursor: pointer;
+    background-color: #5A7C9B;
+    color: #F1F5F9;
+}
+
+.habitFrequencyItem:focus, .habitFrequencyItem:active {
     cursor: pointer;
     background-color: #5A7C9B;
     color: #F1F5F9;
