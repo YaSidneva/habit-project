@@ -72,6 +72,7 @@
 .inputWrap {
     background-color: #F1F5F9;
     border: 1px solid #E2E8F0;
+    font-family: inherit;
 }
 
 .inputWrap:focus, .inputWrap:active {
@@ -97,17 +98,25 @@
     display: flex;
     align-items: center;
     padding-left: 12px;
+    font-family: inherit;
 }
 
-.habitCategory:hover, .habitCategory:focus {
+.habitCategory:hover, .habitCategory:focus, .habitCategory.selected {
     background-color: #FFFFFF;
+    border-color: #5A7C9B;
     cursor: pointer;
+}
+
+.habitCategory.selected .habitCategoryText {
+    color: #5A7C9B;
+    font-weight: bold;
 }
 
 .habitCategoryText {
     margin-left: 12px;
     font-size: 14px;
     line-height: 20px;
+    font-family: inherit;
 }
 
 .habitCategoryIcon {display: flex;
@@ -115,9 +124,19 @@ justify-content: center;
 align-items: center;
 }
 
+.habitCategory.selected .habitCategoryIcon svg path {
+    fill: #5A7C9B;
+}
+
 .addOwnCategory:hover {
     cursor: pointer;
     color: #5A7C9B;
+}
+
+.customCategoryInput {
+    width: 100%;
+    margin-right: 20px;
+    font-family: inherit;
 }
 
 .habitFrequencyBlock {
@@ -135,15 +154,11 @@ align-items: center;
     background-color: #F1F5F9;
     border-radius: 40px;
     margin-top: 12px;
+    border: 1px solid transparent;
+    font-family: inherit;
 }
 
-.habitFrequencyItem:hover {
-    cursor: pointer;
-    background-color: #5A7C9B;
-    color: #F1F5F9;
-}
-
-.habitFrequencyItem:focus, .habitFrequencyItem:active {
+.habitFrequencyItem:hover, .habitFrequencyItem.selected {
     cursor: pointer;
     background-color: #5A7C9B;
     color: #F1F5F9;
@@ -163,6 +178,7 @@ align-items: center;
 .newHabitContainerButton {
     height: 100%;
     border-radius: 8px;
+    font-family: inherit;
 }
 
 .newHabitContainerButtonCancel {
