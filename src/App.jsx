@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import AuthForm from './components/AuthForm'
 import TelegramAuth from './pages/TelegramAuth'
 import Dashboard from './pages/Dashboard.jsx'
+import Habits from "./pages/Habits.jsx";
 
 function App() {
     const navigate = useNavigate()
@@ -26,7 +27,8 @@ function App() {
 
         // 3. Проверяем при фокусе (если попап закрылся, а события выше не сработали)
         const handleFocus = () => {
-            if (localStorage.getItem('user')) {
+            const isAuthPage = window.location.pathname === '/' || window.location.pathname === '/login';
+            if (localStorage.getItem('user') && isAuthPage) {
                 navigate('/dashboard');
             }
         };
@@ -67,6 +69,7 @@ function App() {
             <Route path="/login" element={<AuthForm />} />
             <Route path="/auth/telegram" element={<TelegramAuth />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/habits" element={<Habits />} />
         </Routes>
     )
 }

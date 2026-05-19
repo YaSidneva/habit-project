@@ -38,6 +38,7 @@ export default function Header() {
 
             <nav>
                 <Link to="/dashboard">Dashboard</Link>
+                <Link to="/habits">Habits</Link>
                 <Link to="/" onClick={(e) => handleProtectedClick(e, 'auth-section')}>Leaderboard</Link>
                 <Link to="/" onClick={(e) => handleProtectedClick(e, 'auth-section')}>Statistics</Link>
                 <Link to="/" onClick={(e) => handleProtectedClick(e, 'auth-section')}>Settings</Link>

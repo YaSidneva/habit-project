@@ -5,6 +5,7 @@ import Header from '../components/Header.jsx'
 import Sidebar from '../components/Sidebar.jsx'
 import DashboardMainContainer from "../components/DashboardMainContainer.jsx";
 import NewHabit from "../components/NewHabit.jsx";
+import Footer from "../components/Footer.jsx";
 
 export default function Dashboard() {
     const userData = localStorage.getItem('user')
@@ -30,6 +31,7 @@ export default function Dashboard() {
                     />
                 )}
             </main>
+            <Footer />
         </div>
     )
 }

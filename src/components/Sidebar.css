@@ -37,8 +37,12 @@
     border-right: 1px solid #3B82F6;
 }
 
-.sidebarIconDashboard path {
+.sidebarNavDashboard .sidebarIconDashboard path {
    fill: #3B82F6;
+}
+
+.sidebarNavDashboard .sidebarIconHabits {
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(201deg) brightness(101%) contrast(92%);
 }
 
 .sidebarIconHabits {
