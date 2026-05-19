@@ -41,6 +41,10 @@
    fill: #3B82F6;
 }
 
+.sidebarIconHabits {
+    background-image: url("../assets/icon-habits.svg");
+}
+
 .sidebarIconLeaderboard {
     background-image: url("../assets/icon-leaderboard.svg");
 }
