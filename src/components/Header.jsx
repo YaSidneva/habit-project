@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import './Header.css'
 
 export default function Header() {
@@ -37,11 +37,11 @@ export default function Header() {
             </div>
 
             <nav>
-                <Link to="/dashboard">Dashboard</Link>
-                <Link to="/habits">Habits</Link>
-                <Link to="/" onClick={(e) => handleProtectedClick(e, 'auth-section')}>Leaderboard</Link>
-                <Link to="/" onClick={(e) => handleProtectedClick(e, 'auth-section')}>Statistics</Link>
-                <Link to="/" onClick={(e) => handleProtectedClick(e, 'auth-section')}>Settings</Link>
+                <NavLink to="/dashboard" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Dashboard</NavLink>
+                <NavLink to="/habits" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Habits</NavLink>
+                <NavLink to="/leaderboard" onClick={(e) => handleProtectedClick(e, 'auth-section')} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Leaderboard</NavLink>
+                <NavLink to="/statistics" onClick={(e) => handleProtectedClick(e, 'auth-section')} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Statistics</NavLink>
+                <NavLink to="/settings" onClick={(e) => handleProtectedClick(e, 'auth-section')} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Settings</NavLink>
             </nav>
             <div className="headerSettingsBlock">
                 <div className="headerSettings">

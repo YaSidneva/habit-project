@@ -36,6 +36,23 @@ nav {
     line-height: 20px;
 }
 
+.nav-link {
+    text-decoration: none;
+    color: #64748B;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #3B82F6;
+}
+
+.nav-link.active {
+    color: #3B82F6;
+    border-bottom: 1px solid #3B82F6;
+}
+
 .headerSettingsBlock {
     height: 100%;
     width: 194px;
